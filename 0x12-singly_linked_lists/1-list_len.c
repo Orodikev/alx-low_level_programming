@@ -3,9 +3,9 @@
 
 /**
  * list_len - returns the number of elements in a linked list
- * @ptr:Used as a  pointer to the list_t list
+ * @ptr:Represents a pointer to the list_t list
  *
- * Return:The  number of elements in pointer ptr
+ * Return: number of elements in ptr
  */
 size_t list_len(const list_t *ptr)
 {
@@ -13,7 +13,7 @@ size_t list_len(const list_t *ptr)
 
 	while (ptr)
 	{
-		ptr++;
+		t++;
 		ptr = ptr->next;
 	}
 	return (t);
