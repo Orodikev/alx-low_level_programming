@@ -10,11 +10,11 @@ size_t listint_len(const listint_t *L)
 {
 	size_t s = 0;
 
-	while (L)
-	{
+	do {
 		s++;
 		L = L->next;
 	}
+	while (L);
 
 	return (s);
 }
