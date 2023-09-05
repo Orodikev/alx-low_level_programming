@@ -6,7 +6,7 @@ char *create_buff(char *file);
 void funclose(int cf);
 
 /**
- * create_buffer - Afunction to reserve 1024 bytes for a buffer.
+ * create_buff - A function to reserve 1024 bytes for a buffer.
  * @file: The name of the file buffer is storing chars for.
  *
  * Return: A pointer to the newly-allocated buffer.
