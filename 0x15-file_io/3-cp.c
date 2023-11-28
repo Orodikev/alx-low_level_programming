@@ -2,17 +2,17 @@
 #include <stdio.h>
 
 /**
- * error_file - A function to check if files can open.
- * @file_from: Origin of the file
+ * error_file - Function to check if file can open.
+ * @file_from: File source
  * @file_to: File destination
- * @argv: vector argument
- * Return: NULL.
+ * @argv:Vector argument
+ * Return: NULL
  */
 void error_file(int file_from, int file_to, char *argv[])
 {
 	if (file_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error:Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	if (file_to == -1)
@@ -23,10 +23,10 @@ void error_file(int file_from, int file_to, char *argv[])
 }
 
 /**
- * main - Function to check code for Holberton School students.
- * @argc: Store quantity of given arguments.
- * @argv: arguments vector.
- * Return: Always 0.
+ * main - check for  Holberton School students in the code
+ * @argc: The quantity of arguments
+ * @argv: Vector arguments
+ * Return: NULL
  */
 int main(int argc, char *argv[])
 {
