@@ -38,5 +38,14 @@ void elf_check(unsigned char *efile)
 		dprintf(STDERR_FILENO, "Error: Not an ELF FILE\n");
 	exit(98);
 		}
+		i++;
 	}
 }
+
+/**
+ * mag_p - function to dsiplay the magic numbers of ELF header
+ * @efile: A pointer to the array with the ELF magic numbers
+ *
+ * Description: Magic numbers separated by spaces
+ */
+
