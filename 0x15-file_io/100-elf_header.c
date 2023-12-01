@@ -48,4 +48,39 @@ void elf_check(unsigned char *efile)
  *
  * Description: Magic numbers separated by spaces
  */
+void mag_p(unsigned char *efile)
+{
+	int i = 0;
 
+	printf(" Magic:  ");
+	while (i < EI_NIDENT)
+	{
+		printf("%02x", efile[i]);
+		if (i == EI_NIDENT - 1)
+			printf("\n");
+		else
+			printf(" ");
+	}
+}
+
+/**
+ * class_p - Function that prints the EFL header class.
+ * @efile : pointer to the arrey where the EFL file is stored
+ */
+void class_p(unsigned char *efile)
+{
+	printf(" class:          ");
+	switch (efile[EI_CLASS])
+	{
+		case ELFCLASSNONE:
+			printf("none\n");
+			break;
+		case ELFCLASS32:
+			printf("ELF32\n");
+			break;
+		case ELFCLASS64:
+			printf("ELF64\n");
+		default:
+			printf("not known: %x>\n", efile[EI_CLASS]);
+	}
+}
