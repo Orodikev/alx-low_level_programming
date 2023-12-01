@@ -15,7 +15,7 @@ void ver_p(unsigned char *efile);
 void type_P(unsigned int tp, unsigned char *efile);
 void abi_p(unsigned char *efile);
 void ent_p(unsigned long int ent, unsigned char *efile);
-void osa_p(unsigned int char *efile);
+void osa_p(unsigned char *efile);
 void elf_c(int e);
 
 /**
@@ -80,7 +80,53 @@ void class_p(unsigned char *efile)
 			break;
 		case ELFCLASS64:
 			printf("ELF64\n");
+			break;
 		default:
 			printf("not known: %x>\n", efile[EI_CLASS]);
 	}
 }
+
+/**
+ * osa_p - Function to print OS/ABI of the EFL header
+ * @efile: Pointer to array containing the ELF file
+ */
+void osa_p(unsigned char *efile)
+{
+	printf(" OS/ABI:                 ");
+	switch (efile[EI_OSABI])
+	{
+		case ELFOSABI_NONE:
+			printf("UNIX - System V\n");
+			break;
+		case ELFOSABI_HPUX:
+			printf("UNIX -HP-UX\n");
+			break;
+		case ELFOSABI_NETBSD:
+			printf("UNIX - NetBSD\n");
+			break;
+		case ELFOSABI_LINUX:
+			printf("UNIX - Linux\n");
+			break;
+		case ELFOSABI_SOLARIS:
+			printf("UNIX - Solaris\n");
+			break;
+		case ELFOSABI_IRIX:
+			printf("UNIX - IRIX\n");
+			break;
+		case ELFOSABI_FREEBSD:
+			printf("UNIX - FreeBSD\n");
+			break;
+		case ELFOSABI_TRU64:
+			printf("UNIX - TRU64\n");
+			break;
+		case ELFOSABI_ARM:
+			printf("ARM\n");
+			break;
+		case ELFOSABI_STANDALONE:
+			printf("Standalone App\n");
+			break;
+		default:
+			printf("<unknown: %x>\n", efile[EI_OSABI]);
+	}
+}
+
